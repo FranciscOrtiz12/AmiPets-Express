@@ -1,4 +1,4 @@
-import { Usuario, Veterinario, Cliente, Mascota } from "../models/index";
+import { Usuario, Veterinario, Cliente, Mascota, Control } from "../models/index";
 
 //! VALIDACIONES DE USUARIOS
 
@@ -115,6 +115,36 @@ const existeMasById = async ( id:string = '', isToUpdate:boolean = false ) => {
 
 };
 
+
+//! VALIDACIONES DE CONTROLES
+
+//? verificar si existe un veterinario
+const existeVetControl = async ( rut:string = '' ) => {
+
+    const existeVet = await Veterinario.findOne( { rut, estado: true } );
+    if( !existeVet ){
+        throw new Error(`No hay un Veterinario registrado con el rut: ${ rut }`);
+    }
+};
+
+//? verificar si existe una mascota determinada
+const existeMasControl = async ( _id:string = '' ) => {
+    const existeMas = await Mascota.findById( { _id , estado: true } );
+    if( !existeMas ){
+        throw new Error(`No hay una Mascota registrada con el id: ${ _id }`);
+    }
+};
+
+const existeControl = async ( id:string = '' ) => {
+
+    const existeControl = await Control.findOne( { _id: id, estado: true } );
+    if( !existeControl ) {
+        throw new Error(`No hay un Control registrado con el id: ${ id }`);
+    }
+}
+
+
+
 export {
     //! Validaciones Usuarios
     existeEmailUser,
@@ -130,6 +160,10 @@ export {
     tiposPermitidos,
     existeDue,
     existeMasById,
+    //! Validaciones Controles
+    existeControl,
+    existeVetControl,
+    existeMasControl,
 
     
 }

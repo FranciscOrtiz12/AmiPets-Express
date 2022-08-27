@@ -18,7 +18,7 @@ export const getMascotas = async ( req: Request, res: Response ) => {
         const [ total, mascotas ] = await Promise.all([
             Mascota.countDocuments( estado ),
             Mascota.find( estado )
-                .populate('idDue', ['nombre','apellidos']),
+                    .populate('idDue', ['nombre','apellidos']),
         ]);
 
         res.status(200).json({
@@ -97,7 +97,6 @@ export const putMascotas = async ( req: Request, res: Response ) => {
         })
     }
     
-    
 }
 
 
@@ -126,10 +125,5 @@ export const deleteMascotas = async ( req: Request, res: Response ) => {
             msg: 'Error en catch, informe al administrador'
         })
     }
-
-
-    res.status(200).json({
-        msg: 'Delete - Mascotas'
-    })
     
 }

@@ -1,12 +1,18 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
 
-import { getMascotas, postMascotas, deleteMascotas, putMascotas } from '../controllers/mascotasController';
-import { existeDue, tiposPermitidos, existeMasById } from '../helpers/db-validators';
+import { getMascotas,
+         postMascotas,
+         deleteMascotas,
+         putMascotas } from '../controllers/mascotasController';
+
+import { existeDue,
+         tiposPermitidos,
+         existeMasById } from '../helpers/db-validators';
 
 import { validarCampos,
          validarJWT,
-        validarSexo } from '../middlewares/index';
+         validarSexo } from '../middlewares/index';
 
 
 const router = Router();

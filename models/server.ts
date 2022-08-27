@@ -5,6 +5,7 @@ import userRoutes from '../routes/usuario';
 import veterinariosRoutes from '../routes/veterinario';
 import clientesRoutes from '../routes/cliente';
 import mascotasRoutes from '../routes/mascotas';
+import controlRoutes from '../routes/control';
 
 import cors from "cors";
 
@@ -21,6 +22,7 @@ class Server {
         veterinarios: '/api/veterinarios',
         clientes: '/api/clientes',
         mascotas: '/api/mascotas',
+        controles: '/api/controles',
     }
 
 
@@ -62,6 +64,7 @@ class Server {
         this.app.use( this.apiPaths.veterinarios, veterinariosRoutes );
         this.app.use( this.apiPaths.clientes, clientesRoutes );
         this.app.use( this.apiPaths.mascotas, mascotasRoutes );
+        this.app.use( this.apiPaths.controles, controlRoutes );
     }
 
 

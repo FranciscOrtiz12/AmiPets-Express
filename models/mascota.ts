@@ -1,7 +1,6 @@
 import { Schema, model } from 'mongoose';
 
 const MascotaSchema = new Schema({
-     //Falta la relacion
     nombre: { 
         type: String,
         required: [ true, 'El nombre de la mascota es obligatorio' ]
