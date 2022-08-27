@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { Mascota, Cliente, Veterinario, Control  } from "../models/index"
+import { Cliente, Veterinario, Control  } from "../models/index"
 
 //! CONTROLADRES
 
@@ -87,7 +87,6 @@ export const putControles = async ( req: Request, res: Response ) => {
     const usuarioAutenticado = req.usuario;
 
     const query = { _id: id };
-    console.log(query);
     
     try {
         const control = await Control.findOneAndUpdate( query, data, { new: true } );
@@ -135,20 +134,3 @@ export const deleteControles = async ( req: Request, res: Response ) => {
     }
 
 }
-
-
-
-
-/* 
-    ESTO SE DEBE ELIMINAR DE MANERA INMEDIATA
-
-    Estimada Carolina López,
- 
-    Gracias por la oferta para ocupar el cargo de Analista Programador en Advise. Estoy feliz de aceptar formalmente la oferta.
-    Puedo confirmar que mi fecha de inicio será el 29 de agosto del 2022. Si hay alguna información adicional que necesite antes de esta fecha, por favor hágamelo saber.
-
-    Desde ya, muchas gracias por la oportunidad.
-
-    Saludos cordiales,
-    Francisco Ortiz
-*/

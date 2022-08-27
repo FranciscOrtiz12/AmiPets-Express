@@ -3,7 +3,7 @@ import { check } from 'express-validator';
 
 import { login } from '../controllers/authController';
 
-import { validarCampos } from '../middlewares/';
+import { validarCampos } from '../middlewares/index';
 
 
 const router = Router();

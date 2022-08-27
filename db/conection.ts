@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 
-// Conexion a la DB
+//? Conexion a la DB
 const dbConnection = async () => {
 
     try {

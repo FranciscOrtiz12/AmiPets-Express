@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 
 import { Usuario } from "../models";
 
+//! Funcion que valida que venga un token en la peticion del usuario
 const validarJWT = async ( req:any , res:any, next:any ) => {
 
     const token = req.header('x-token');
@@ -12,7 +13,7 @@ const validarJWT = async ( req:any , res:any, next:any ) => {
         return res.status(401).json({
             msg: 'No hay token en la petición'
         });
-    }
+    } 
 
     try {
         

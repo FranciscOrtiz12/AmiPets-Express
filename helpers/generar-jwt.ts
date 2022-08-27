@@ -8,7 +8,7 @@ const generarJWT = ( uid:String = '' ) => {
 
         //? Crea un JWT( Json Web Token ) en base al id del usuario, y se firma con una variable de entorno 
         jwt.sign( payload, process.env.SECRETEORPRIVATEKEY!, {
-            expiresIn: '10h'
+            expiresIn: '10h'  //? expira al pasar 10horas
         }, ( err, token ) => {
             
             if( err ) {

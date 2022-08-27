@@ -3,7 +3,7 @@ import bcryptjs from "bcryptjs";
 
 import { Usuario } from "../models";
 
-import generarJWT from '../helpers/generar-jwt';
+import { generarJWT } from '../helpers/index';
 
 //! CONTROLADRES
 
@@ -23,7 +23,6 @@ export const login = async ( req: Request, res: Response ) => {
         }
         
         //? Si el usuario está activo
-        console.log(usuario);
         if( !usuario.estado ) {
             return res.status(400).json({
                 msg: 'Usuario / Password no son correctos - estado'

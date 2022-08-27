@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { selectFields } from "express-validator/src/select-fields";
 
 import { Mascota, Cliente } from "../models/index"
 

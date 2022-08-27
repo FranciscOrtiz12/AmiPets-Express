@@ -65,7 +65,9 @@ export const postUsuario = async ( req: Request|any, res: Response ) => {
         
     } catch (error) {
         console.log(error);
-        console.log('Error en catch, informe al Administrador');
+        res.status(500).json({
+            msg: 'Error en catch, Informe al Administrador' 
+         });
     }
 
 

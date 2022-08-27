@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 
-// import Usuario from "../models/usuario";
 import { Veterinario } from "../models/index"
 
 //! CONTROLADRES
